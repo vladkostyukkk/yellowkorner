@@ -1,0 +1,276 @@
+.footer {
+  @include mainLayout;
+
+  &__navigation {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -12.5px;
+    padding: 50px 0 49px;
+
+    @include max-media-query($point-md) {
+      padding: 50px 12.5px 26px;
+    }
+
+    @include max-media-query($point-sm) {
+      padding: 0 12.5px 8px;
+    }
+
+    .submenu {
+      border-bottom: 1px solid gray;
+      flex: 0 0 100%;
+      max-width: 100%;
+
+      @include min-media-query($point-md) {
+        padding: 0 12.5px;
+        border-bottom: none;
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+
+      @include max-media-query($point-md) {
+        &.show {
+          .list {
+            display: block;
+          }
+        }
+      }
+
+      &.small {
+        @include min-media-query($point-xxl) {
+          flex: 0 0 16.66667%;
+          max-width: 16.66667%;
+        }
+      }
+
+      &.large {
+        @include min-media-query($point-md) {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+
+        @include min-media-query($point-xxl) {
+          flex: 0 0 33.33333%;
+          max-width: 33.33333%;
+        }
+
+        .list {
+          column-count: 2;
+        }
+      }
+
+      h4 {
+        margin: 0 0 25px;
+
+        @include max-media-query($point-md) {
+          margin: 0;
+          padding: 16px 0;
+        }
+      }
+
+      .list {
+        @include max-media-query($point-md) {
+          display: none;
+        }
+
+        a {
+          display: block;
+          padding: 7px 0 6px;
+          break-inside: avoid;
+        }
+      }
+    }
+
+    .links {
+      padding: 0 12.5px;
+      flex: 0 0 25%;
+      max-width: 25%;
+
+      @include max-media-query($point-xxl) {
+        display: flex;
+        padding: 15px 0 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+
+        .area {
+          padding: 0 12.5px;
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+      }
+
+      @include max-media-query($point-md) {
+        display: block;
+
+        .area {
+          padding: 0 0 15px;
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+
+      h4 {
+        margin: 0 0 25px;
+
+        @include max-media-query($point-md) {
+          margin-bottom: 17px;
+        }
+      }
+    }
+  }
+
+  &__lang {
+    padding: 18px 0 24px;
+
+    .toggle {
+      display: block;
+      padding: 0 42px 0 0;
+    }
+  }
+
+  .links-asset {
+    padding: 16px 0;
+    text-align: center;
+
+    @include max-media-query($point-md) {
+      padding: 6px 0;
+    }
+
+    @include max-media-query($point-sm) {
+      overflow: hidden;
+      padding: 2px 0 0;
+      text-align: left;
+    }
+
+    a {
+      margin: 0 8px;
+
+      @include max-media-query($point-sm) {
+        display: block;
+        margin: 0 12px 16px;
+      }
+    }
+  }
+}
+
+.block-reinsurance {
+  display: flex;
+  margin: 0 -12.5px;
+  padding: 48px 0 41px;
+
+  @include max-media-query($point-md) {
+    padding-bottom: 19px;
+  }
+
+  @include max-media-query($point-sm) {
+    padding-bottom: 0;
+  }
+
+  .col {
+    flex: 1 0 25%;
+    padding: 0 12.5px;
+    max-width: 25%;
+  }
+
+  img {
+    vertical-align: top;
+
+    @include max-media-query($point-md) {
+      width: 80%;
+    }
+  }
+
+  h5 {
+    padding: 8px 0 11px;
+    font-weight: bolder;
+    font-size: 1.25rem;
+
+    @include max-media-query($point-md) {
+      display: none;
+    }
+  }
+
+  p {
+    margin: 0 0 17px;
+    font-size: 0.92rem;
+
+    @include max-media-query($point-md) {
+      &.text {
+        display: none;
+      }
+    }
+
+    @include max-media-query($point-sm) {
+      margin: 0 0 11px;
+    }
+  }
+}
+
+.block-find-gallery {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -12.5px;
+  padding: 25px 0 24px;
+
+  @include max-media-query($point-xxl) {
+    padding-bottom: 25px;
+  }
+
+  @include max-media-query($point-md) {
+    display: none;
+  }
+
+  img {
+    margin: 0 12.5px;
+  }
+
+  .holder {
+    flex: 0 0 66.66667%;
+    padding: 0 12.5px;
+    max-width: 66.66667%;
+  }
+
+  form {
+    padding: 25px 0 0;
+  }
+
+  .input-group {
+    display: flex;
+    width: 100%;
+
+    input[type="text"] {
+      flex: 1 1 auto;
+      padding: 27px 56px 26px 23px;
+    }
+  }
+
+  .btn-send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 -1px;
+    padding: 0 24px;
+  }
+}
+
+.form-newsletter {
+  display: flex;
+  width: 100%;
+  padding: 0 0 64px;
+
+  @include max-media-query($point-xxl) {
+    padding: 0;
+  }
+
+  input[type="email"] {
+    flex: 1 1 auto;
+    padding: 14px 12px;
+  }
+
+  .btn-send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 -1px;
+    padding: 0 11px;
+  }
+}

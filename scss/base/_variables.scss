@@ -1,0 +1,137 @@
+// FONTS
+$main-font: "Helvetica Neue", "Noto Sans", Arial, sans-serif;
+$secondary-font: "Fago Office Serif", "Helvetica Neue", "Noto Sans", Arial, sans-serif;
+$icon-font: 'icomoon';
+
+// COLORS
+
+$color-white: #fff;
+$color-red: #a6070f;
+$color-gold: #baa85a;
+$color-grey-light: #f2f2f2;
+$color-grey-dark: #d7d7d7;
+$color-dark: #29282a;
+$color-black: #0d0d0d;
+
+$color-text: #212529;
+$color-link: #444;
+$color-link-hover: #1e1e1e;
+$color-placeholder: #495057;
+
+// LAYOUT SIZES
+
+$max-width: 1280px;
+$min-width: 320px;
+$side-indent: 20px;
+
+$transition: 0.3s ease-in;
+
+// BREAKPOINTS
+
+$point-xs: 480px;
+$point-sm: 576px;
+$point-md: 768px;
+$point-lg: 960px;
+$point-xl: 1024px;
+$point-xxl: 1200px;
+$point-1280: 1280px;
+$point-xxxl: 3000px;
+
+// LAYOUT STYLE
+
+@mixin min-media-query($point) {
+  @media only screen and (min-width: $point) {
+    @content;
+  }
+}
+
+@mixin max-media-query($point) {
+  @media only screen and (max-width: $point - 1px) {
+    @content;
+  }
+}
+
+@mixin mainLayout {
+  margin: 0 auto;
+  width: calc(100% - 25px);
+
+  @include min-media-query($point-sm) {
+    max-width: 720px;
+  }
+
+  @include min-media-query($point-md) {
+    max-width: 960px;
+  }
+
+  @include min-media-query($point-xl) {
+    max-width: 1140px;
+  }
+
+  @include min-media-query($point-xxl) {
+    max-width: 1400px;
+  }
+
+  @include min-media-query($point-xxxl) {
+    max-width: 2500px;
+  }
+}
+
+// ICON
+
+@mixin icon {
+  font-family: $icon-font !important;
+  speak: never;
+  font-style: normal;
+  font-weight: 300;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// CHECKBOX
+@mixin checkbox {
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked + label {
+      &::before {
+        background: $color-gold;
+      }
+    }
+
+    &:disabled + label {
+      opacity: 0.6;
+      cursor: initial;
+
+      &:hover {
+        &::before {
+          background: $color-white;
+        }
+      }
+    }
+  }
+
+  label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      border: 1px solid $color-gold;
+      background: $color-white;
+      box-shadow: inset 0 0 0 2.5px $color-white;
+      width: 19px;
+      height: 19px;
+      content: '';
+    }
+
+    &:hover {
+      &::before {
+        background: $color-grey-light;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  min-width: $min-width;
+  min-height: 100%;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+.container {
+  @include mainLayout;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+}

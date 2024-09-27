@@ -1,0 +1,142 @@
+.block-filters {
+  &__head,
+  &__footer {
+    display: none;
+  }
+
+  &__block {
+    margin: 16px 0 0;
+
+    .toggle {
+      display: block;
+      padding: 10px 10px 7px 16px;
+      font-size: 0.8rem;
+    }
+
+    .dropdown {
+      transform: scaleY(0);
+      transform-origin: top;
+      max-height: 0;
+      z-index: 2;
+    }
+  }
+
+  &__information {
+    @include max-media-query($point-md) {
+      display: flex;
+      flex-wrap: wrap;
+      width: calc(100% + 25px);
+      margin: 0 -12.5px;
+    }
+
+    h3 {
+      margin: 0 0 5px;
+      font-size: 1.18rem;
+
+      @include min-media-query($point-md) {
+        font-size: 1.2375rem;
+      }
+
+      @include max-media-query($point-md) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0 12.5px;
+      }
+    }
+
+    h4 {
+      font-size: 1.2375rem;
+
+      @include min-media-query($point-md) {
+        font-size: 1.375rem;
+      }
+
+      @include max-media-query($point-md) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 24px 12.5px 0;
+      }
+    }
+
+    .sort {
+      max-width: calc(50% - 13px);
+
+      @include max-media-query($point-xxl) {
+        max-width: 100%;
+      }
+
+      @include max-media-query($point-md) {
+        margin: 0 12.5px;
+        flex: 0 0 calc(50% - 25px);
+        max-width: calc(50% - 25px);
+      }
+    }
+
+    .panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+
+      @include max-media-query($point-md) {
+        display: none;
+      }
+    }
+
+    .selection {
+      display: flex;
+      align-items: center;
+      margin: 0 0 26px;
+      padding: 8px 0;
+      flex-wrap: wrap;
+
+      @include max-media-query($point-md) {
+        display: none;
+      }
+
+      p {
+        margin: 0 24px 0 0;
+      }
+
+      .btn-filter {
+        display: flex;
+        align-items: center;
+        margin: 0 5px;
+        padding: 5px 10px 8px;
+        font-size: 1.1rem;
+        line-height: 1.5;
+
+        &:first-of-type {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+  &__open {
+    display: none;
+
+    @include max-media-query($point-md) {
+      display: block;
+      margin: 0 12.5px;
+      flex: 0 0 calc(50% - 25px);
+      max-width: calc(50% - 25px);
+    }
+  }
+}
+
+.sort {
+  font-size: 0.8rem;
+
+  .toggle {
+    display: block;
+    padding: 11px 35px 6px 11px;
+    font-size: 0.8rem;
+  }
+
+  .dropdown {
+    transform: scaleY(0);
+    transform-origin: top;
+    max-height: 0;
+  }
+}
